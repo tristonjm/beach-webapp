@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+</head>
+<h1>Beach Chair Rentals</h1>
+<p>Please fill out this information:</p>
+<br>
+<body>
+    <form action="">
+    <fieldset>
+        <legend>Personal Details</legend>
+        <label>
+            First name:
+            <input type="text" name="firstname" size="20" maxlength="50"/>
+        </label>
+        <br>
+        <label>
+            Last name:
+             <input type="text" name="lastname" size="20" maxlength="50"/>
+        </label>
+        <br>
+        <label>
+            Email address:
+             <input type="email" name="email" size="30" maxlength="70"/>
+        </label>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Purchase Details</legend>
+        <p> Reminder: One "set" consists of two chairs and one umbrella</p>
+        <p>Estimated Prices</p>
+            <table>
+                <tr>
+                    <th>Number of sets</th>
+                    <th>Price of Sets($)</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>50</td>
+                </tr>
+                    <tr>
+                    <td>2</td>
+                    <td>90</td>
+                </tr>
+                    <tr>
+                    <td>3</td>
+                    <td>130</td>
+                </tr>
+                    <tr>
+                    <td>4</td>
+                    <td>160</td>
+                </tr>
+                    <tr>
+                    <td>5</td>
+                    <td>200</td>
+                </tr>
+            </table>
+
+            </select>
+
+        
+        <p>
+            <label for="number">How many sets do you want to rent?</label>
+            <select name="number" id="number"> 
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option> 
+            </select> 
+            <br>
+        <p>Cost of sets to be rented:</p>   
+        <script>
+
+        
+        </script>
+        <br>
+        </p>
+        <br>
+            <label>From:
+            <input type="date" id="fromDate">
+            </label>
+
+            <label>To:
+            <input type="date" id="toDate">
+            </label>
+
+            <p id="result"></p>
+
+            <script>
+                const from = document.getElementById("fromDate");
+                const to = document.getElementById("toDate");
+                const result = document.getElementById("result");
+
+                function calculateDays() {
+                     if (!from.value || !to.value) return;
+
+                        const start = new Date(from.value);
+                        const end = new Date(to.value);
+
+                        const diffTime = end - start;
+                        const diffDays = diffTime / (1000 * 60 * 60 * 24);
+
+                        result.textContent = `Amount of days chairs will be rented: ${diffDays + 1}`;
+                }
+
+                from.addEventListener("change", calculateDays);
+                to.addEventListener("change", calculateDays);
+             </script>
+        <br>
+        <p>
+            Would you like any extra chairs?
+            <br>
+            <p>This sends a notification to the Beach Attendant</p>
+            <br>
+            <label>
+                <input type="radio" name="feedback" value="yes" />
+                Yes
+            </label>
+            <label>
+                <input type="radio" name="feedback" value="no" />
+                No
+            </label>
+            <label>From:
+            <input type="date" id="fromDate">
+            </label>
+
+            <label>To:
+            <input type="date" id="toDate">
+            </label>
+
+            <p id="result"></p>
+
+            <script>
+                const from = document.getElementById("fromDate");
+                const to = document.getElementById("toDate");
+                const result = document.getElementById("result");
+
+                function calculateDays() {
+                     if (!from.value || !to.value) return;
+
+                        const start = new Date(from.value);
+                        const end = new Date(to.value);
+
+                        const diffTime = end - start;
+                        const diffDays = diffTime / (1000 * 60 * 60 * 24);
+
+                        result.textContent = `Amount of days extra chairs will be rented: ${diffDays + 1}`;
+                }
+
+                from.addEventListener("change", calculateDays);
+                to.addEventListener("change", calculateDays);
+             </script>
+        </p>
+        <P>
+            <label>
+                <input type="checkbox" name="receipt" />
+                Would you like an email to confirm your purchase?
+            </label>
+        </p>
+    </fieldset>
+    <input type="submit" name="Submit" />
+    </form>
+</body>
+</html>
